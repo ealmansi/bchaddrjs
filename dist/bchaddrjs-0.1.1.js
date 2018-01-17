@@ -8888,7 +8888,7 @@ function config (name) {
 }).call(this,typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 },{}],52:[function(require,module,exports){
 (function (Buffer){
-/**
+/***
  * @license
  * https://github.com/bitcoincashjs/bchaddr
  * Copyright (c) 2018 Emilio Almansi
@@ -9063,53 +9063,51 @@ function decodeAddress (address) {
 function decodeBase58Address (address) {
   try {
     var payload = bs58check.decode(address)
-    if (payload.length > 0) {
-      var versionByte = payload[0]
-      var hash = Array.prototype.slice.call(payload, 1)
-      switch (versionByte) {
-        case VERSION_BYTE[Format.Legacy][Network.Mainnet][Type.P2PKH]:
-          return {
-            hash: hash,
-            format: Format.Legacy,
-            network: Network.Mainnet,
-            type: Type.P2PKH
-          }
-        case VERSION_BYTE[Format.Legacy][Network.Mainnet][Type.P2SH]:
-          return {
-            hash: hash,
-            format: Format.Legacy,
-            network: Network.Mainnet,
-            type: Type.P2SH
-          }
-        case VERSION_BYTE[Format.Legacy][Network.Testnet][Type.P2PKH]:
-          return {
-            hash: hash,
-            format: Format.Legacy,
-            network: Network.Testnet,
-            type: Type.P2PKH
-          }
-        case VERSION_BYTE[Format.Legacy][Network.Testnet][Type.P2SH]:
-          return {
-            hash: hash,
-            format: Format.Legacy,
-            network: Network.Testnet,
-            type: Type.P2SH
-          }
-        case VERSION_BYTE[Format.Bitpay][Network.Mainnet][Type.P2PKH]:
-          return {
-            hash: hash,
-            format: Format.Bitpay,
-            network: Network.Mainnet,
-            type: Type.P2PKH
-          }
-        case VERSION_BYTE[Format.Bitpay][Network.Mainnet][Type.P2SH]:
-          return {
-            hash: hash,
-            format: Format.Bitpay,
-            network: Network.Mainnet,
-            type: Type.P2SH
-          }
-      }
+    var versionByte = payload[0]
+    var hash = Array.prototype.slice.call(payload, 1)
+    switch (versionByte) {
+      case VERSION_BYTE[Format.Legacy][Network.Mainnet][Type.P2PKH]:
+        return {
+          hash: hash,
+          format: Format.Legacy,
+          network: Network.Mainnet,
+          type: Type.P2PKH
+        }
+      case VERSION_BYTE[Format.Legacy][Network.Mainnet][Type.P2SH]:
+        return {
+          hash: hash,
+          format: Format.Legacy,
+          network: Network.Mainnet,
+          type: Type.P2SH
+        }
+      case VERSION_BYTE[Format.Legacy][Network.Testnet][Type.P2PKH]:
+        return {
+          hash: hash,
+          format: Format.Legacy,
+          network: Network.Testnet,
+          type: Type.P2PKH
+        }
+      case VERSION_BYTE[Format.Legacy][Network.Testnet][Type.P2SH]:
+        return {
+          hash: hash,
+          format: Format.Legacy,
+          network: Network.Testnet,
+          type: Type.P2SH
+        }
+      case VERSION_BYTE[Format.Bitpay][Network.Mainnet][Type.P2PKH]:
+        return {
+          hash: hash,
+          format: Format.Bitpay,
+          network: Network.Mainnet,
+          type: Type.P2PKH
+        }
+      case VERSION_BYTE[Format.Bitpay][Network.Mainnet][Type.P2SH]:
+        return {
+          hash: hash,
+          format: Format.Bitpay,
+          network: Network.Mainnet,
+          type: Type.P2SH
+        }
     }
   } catch (error) {
   }
