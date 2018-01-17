@@ -1,8 +1,11 @@
 # BchAddr.js: Bitcoin Cash general purpose address translation for Node.js and web browsers.
 
 [![Build Status](https://travis-ci.org/bitcoincashjs/bchaddrjs.svg?branch=master)](https://travis-ci.org/bitcoincashjs/bchaddrjs) [![Coverage Status](https://coveralls.io/repos/github/bitcoincashjs/bchaddrjs/badge.svg?branch=master)](https://coveralls.io/github/bitcoincashjs/bchaddrjs?branch=master)
+[![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 [![NPM](https://nodei.co/npm/bchaddrjs.png?downloads=true)](https://nodei.co/npm/bchaddrjs/)
+
+[![JavaScript Style Guide](https://cdn.rawgit.com/feross/standard/master/badge.svg)](https://github.com/feross/standard)
 
 Plug & Play JavaScript library for all Bitcoin Cash address format translation needs. Easy-to-use, thoroughly tested, and feature complete.
 
