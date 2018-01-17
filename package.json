@@ -1,0 +1,57 @@
+{
+  "name": "bchaddrjs",
+  "version": "0.1.0",
+  "description": "Bitcoin Cash general purpose address translation.",
+  "main": "src/bchaddr.js",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "lint": "standard --global describe --global it src/ test/ scripts/",
+    "test": "npm run lint && nyc --reporter=html --reporter=text mocha",
+    "coveralls": "nyc report --reporter=text-lcov | coveralls",
+    "docs": "jsdoc src/bchaddr.js --destination jsdoc && http-server jsdoc",
+    "preversion": "npm test",
+    "version": "node scripts/version.js",
+    "postversion": "node scripts/postversion.js",
+    "bump": "npm version patch -m 'Bump version to %s.'",
+    "bump:minor": "npm version minor -m 'Bump version to %s.'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@github.com/bitcoincashjs/bchaddrjs.git"
+  },
+  "keywords": [
+    "bitcoin-cash",
+    "bitcoin",
+    "bch",
+    "cryptocurrency",
+    "address",
+    "encoding",
+    "translation",
+    "base58",
+    "bitpay",
+    "cash-address"
+  ],
+  "author": "Emilio Almansi <hi@ealmansi.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/bitcoincashjs/bchaddrjs/issues"
+  },
+  "homepage": "https://github.com/bitcoincashjs/bchaddrjs#readme",
+  "devDependencies": {
+    "browserify": "^15.2.0",
+    "chai": "^4.1.2",
+    "coveralls": "^3.0.0",
+    "http-server": "^0.11.1",
+    "jsdoc": "^3.5.5",
+    "mocha": "^4.1.0",
+    "mustache": "^2.3.0",
+    "nyc": "^11.4.1",
+    "shelljs": "^0.8.0",
+    "standard": "^10.0.3",
+    "uglify-js": "^3.3.7"
+  },
+  "dependencies": {
+    "bs58check": "^2.1.1",
+    "cashaddrjs": "^0.2.7"
+  }
+}
