@@ -145,4 +145,4 @@ $ npm run docs
 
 ### Online
 
-Browse automatically generated jsdocs [online](https://cdn.rawgit.com/bitcoincashjs/bchaddrjs/master/docs/index.html).
+Browse automatically generated jsdocs [online](https://cdn.rawgit.com/bitcoincashjs/bchaddrjs/master/jsdoc/index.html).
