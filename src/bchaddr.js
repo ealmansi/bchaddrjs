@@ -292,9 +292,7 @@ function decodeCashAddressWithPrefix (address) {
  */
 function encodeAsLegacy (decoded) {
   var versionByte = VERSION_BYTE[Format.Legacy][decoded.network][decoded.type]
-  var buffer = Buffer.alloc(1 + decoded.hash.length)
-  buffer[0] = versionByte
-  buffer.set(decoded.hash, 1)
+  var buffer = Buffer.concat([Buffer.from([versionByte]), Buffer.from(decoded.hash)])
   return bs58check.encode(buffer)
 }
 
@@ -306,9 +304,7 @@ function encodeAsLegacy (decoded) {
  */
 function encodeAsBitpay (decoded) {
   var versionByte = VERSION_BYTE[Format.Bitpay][decoded.network][decoded.type]
-  var buffer = Buffer.alloc(1 + decoded.hash.length)
-  buffer[0] = versionByte
-  buffer.set(decoded.hash, 1)
+  var buffer = Buffer.concat([Buffer.from([versionByte]), Buffer.from(decoded.hash)])
   return bs58check.encode(buffer)
 }
 
