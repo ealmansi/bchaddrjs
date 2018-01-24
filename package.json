@@ -16,7 +16,7 @@
     "bump:minor": "npm version minor -m 'Bump version to %s.'"
   },
   "engines": {
-    "node": "6.0.0"
+    "node": ">= 6.0.0"
   },
   "repository": {
     "type": "git",
