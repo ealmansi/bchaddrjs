@@ -15,6 +15,9 @@
     "bump": "npm version patch -m 'Bump version to %s.'",
     "bump:minor": "npm version minor -m 'Bump version to %s.'"
   },
+  "engines": {
+    "node": "6.0.0"
+  },
   "repository": {
     "type": "git",
     "url": "git+ssh://git@github.com/bitcoincashjs/bchaddrjs.git"
