@@ -118,9 +118,6 @@ function toBitpayAddress (address) {
  */
 function toCashAddress (address) {
   var decoded = decodeAddress(address)
-  if (decoded.format === Format.Cashaddr) {
-    return address
-  }
   return encodeAsCashaddr(decoded)
 }
 
