@@ -13,11 +13,11 @@ var version = require('../package.json').version
 shell.rm('-rf', 'dist')
 shell.mkdir('-p', 'dist')
 
-shell.exec('npx browserify src/bchaddr.js --s bchaddr', { silent:true })
+shell.exec('npx browserify src/bchaddr.js --s bchaddr', { silent: true })
   .to('dist/bchaddrjs-' + version + '.js')
 shell.echo('Generated file: dist/bchaddrjs-' + version + '.js.')
 
 shell.cp('LICENSE.js', 'dist/bchaddrjs-' + version + '.min.js')
-shell.exec('cat dist/bchaddrjs-' + version + '.js | npx uglifyjs -c', { silent:true })
+shell.exec('cat dist/bchaddrjs-' + version + '.js | npx uglifyjs -c', { silent: true })
   .toEnd('dist/bchaddrjs-' + version + '.min.js')
 shell.echo('Generated file: dist/bchaddrjs-' + version + '.min.js.')

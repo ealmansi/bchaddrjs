@@ -214,7 +214,7 @@ describe('bchaddr', function () {
     'bitcoincash:qrmed4fxlhkgay9nxw7zn9muew5ktkyjnuuawvycze',
     'bitcoincash:qqv3cpvmu4h0vqa6aly0urec7kwtuhe49yz6e7922v',
     'bitcoincash:qr39scfteeu5l573lzerchh6wc4cqkxeturafzfkk9',
-    'bitcoincash:qzzjgw37vwls805c9fw6g9vqyupadst6wgmane0s4l',
+    'bitcoincash:qzzjgw37vwls805c9fw6g9vqyupadst6wgmane0s4l'
   ]
 
   var CASHADDR_MAINNET_P2SH_ADDRESSES = [

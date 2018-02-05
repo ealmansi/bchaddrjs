@@ -9,24 +9,24 @@
 var assert = require('chai').assert
 var bchaddr = require('..')
 
-describe('Readme examples', function() {
-  it('should work exactly as advertised', function() {
-    var Format = bchaddr.Format;
-    var Network = bchaddr.Network;
-    var Type = bchaddr.Type;
-    var isLegacyAddress = bchaddr.isLegacyAddress;
-    var isBitpayAddress = bchaddr.isBitpayAddress;
-    var isCashAddress = bchaddr.isCashAddress;
-    var isMainnetAddress = bchaddr.isMainnetAddress;
-    var isTestnetAddress = bchaddr.isTestnetAddress;
-    var isP2PKHAddress = bchaddr.isP2PKHAddress;
-    var isP2SHAddress = bchaddr.isP2SHAddress;
-    var detectAddressFormat = bchaddr.detectAddressFormat;
-    var detectAddressNetwork = bchaddr.detectAddressNetwork;
-    var detectAddressType = bchaddr.detectAddressType;
-    var toLegacyAddress = bchaddr.toLegacyAddress;
-    var toBitpayAddress = bchaddr.toBitpayAddress;
-    var toCashAddress = bchaddr.toCashAddress;
+describe('Readme examples', function () {
+  it('should work exactly as advertised', function () {
+    var Format = bchaddr.Format
+    var Network = bchaddr.Network
+    var Type = bchaddr.Type
+    var isLegacyAddress = bchaddr.isLegacyAddress
+    var isBitpayAddress = bchaddr.isBitpayAddress
+    var isCashAddress = bchaddr.isCashAddress
+    var isMainnetAddress = bchaddr.isMainnetAddress
+    var isTestnetAddress = bchaddr.isTestnetAddress
+    var isP2PKHAddress = bchaddr.isP2PKHAddress
+    var isP2SHAddress = bchaddr.isP2SHAddress
+    var detectAddressFormat = bchaddr.detectAddressFormat
+    var detectAddressNetwork = bchaddr.detectAddressNetwork
+    var detectAddressType = bchaddr.detectAddressType
+    var toLegacyAddress = bchaddr.toLegacyAddress
+    var toBitpayAddress = bchaddr.toBitpayAddress
+    var toCashAddress = bchaddr.toCashAddress
     assert.strictEqual(
       isLegacyAddress('1B9UNtBfkkpgt8kVbwLN9ktE62QKnMbDzR'),
       true

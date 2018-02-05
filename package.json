@@ -5,8 +5,9 @@
   "main": "src/bchaddr.js",
   "scripts": {
     "build": "node scripts/build.js",
-    "lint": "standard --global describe --global it src/ test/ scripts/",
-    "test": "npm run lint && nyc --reporter=html --reporter=text mocha",
+    "lint": "standard --global describe --global it src/* test/* scripts/*",
+    "pretest": "npm run lint",
+    "test": "nyc --reporter=html --reporter=text mocha",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
     "docs": "jsdoc src/bchaddr.js --destination jsdoc && http-server jsdoc",
     "preversion": "npm test",
