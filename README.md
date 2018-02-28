@@ -29,7 +29,7 @@ $ bower install --save bchaddrjs
 
 ### Manually
 
-You may also download the distribution file manually and place it within your third-party scripts directory: [dist/bchaddrjs-0.2.0.min.js](https://cdn.rawgit.com/bitcoincashjs/bchaddrjs/master/dist/bchaddrjs-0.2.0.min.js).
+You may also download the distribution file manually and place it within your third-party scripts directory: [dist/bchaddrjs-0.2.1.min.js](https://cdn.rawgit.com/bitcoincashjs/bchaddrjs/master/dist/bchaddrjs-0.2.1.min.js).
 
 ## Usage
 
@@ -49,7 +49,7 @@ You may include a script tag in your HTML and the `bchaddr` module will be defin
 <html>
   <head>
     ...
-    <script src="https://cdn.rawgit.com/bitcoincashjs/bchaddrjs/master/dist/bchaddrjs-0.2.0.min.js"></script>
+    <script src="https://cdn.rawgit.com/bitcoincashjs/bchaddrjs/master/dist/bchaddrjs-0.2.1.min.js"></script>
   </head>
   ...
 </html>
