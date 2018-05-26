@@ -47,12 +47,12 @@
     "coveralls": "^3.0.0",
     "http-server": "^0.11.1",
     "jsdoc": "^3.5.5",
-    "mocha": "^4.1.0",
+    "mocha": "^5.2.0",
     "mustache": "^2.3.0",
-    "nyc": "^11.4.1",
-    "shelljs": "^0.8.0",
-    "standard": "^10.0.3",
-    "uglify-js": "^3.3.7"
+    "nyc": "^11.8.0",
+    "shelljs": "^0.8.2",
+    "standard": "^11.0.1",
+    "uglify-js": "^3.3.27"
   },
   "dependencies": {
     "bs58check": "^2.1.1",
