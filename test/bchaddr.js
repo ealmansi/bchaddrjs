@@ -364,6 +364,9 @@ describe('bchaddr', function () {
       assert.throws(function () {
         bchaddr.detectAddressFormat('some invalid address')
       }, bchaddr.InvalidAddressError)
+      assert.throws(function () {
+        bchaddr.detectAddressFormat('st1LuPdPkGH5QoNSewQrr8EzNbM27ktPdgQX')
+      }, bchaddr.InvalidAddressError)
     })
     it('it should detect a legacy address\' format correctly', function () {
       LEGACY_ADDRESSES.forEach(function (address) {
@@ -390,6 +393,9 @@ describe('bchaddr', function () {
       assert.throws(function () {
         bchaddr.detectAddressNetwork('some invalid address')
       }, bchaddr.InvalidAddressError)
+      assert.throws(function () {
+        bchaddr.detectAddressNetwork('t1LuPdPkGH5QoNSewQrr8EzNbM27ktPdgQX')
+      }, bchaddr.InvalidAddressError)
     })
     it('it should detect a mainnet address\' network correctly', function () {
       MAINNET_ADDRESSES.forEach(function (address) {
@@ -411,6 +417,9 @@ describe('bchaddr', function () {
       assert.throws(function () {
         bchaddr.detectAddressType('some invalid address')
       }, bchaddr.InvalidAddressError)
+      assert.throws(function () {
+        bchaddr.detectAddressType('somt1LuPdPkGH5QoNSewQrr8EzNbM27ktPdgQX')
+      }, bchaddr.InvalidAddressError)
     })
     it('should detect a P2PKH address\' type correctly', function () {
       P2PKH_ADDRESSES.forEach(function (address) {
@@ -431,6 +440,9 @@ describe('bchaddr', function () {
       }, bchaddr.InvalidAddressError)
       assert.throws(function () {
         bchaddr.toLegacyAddress('some invalid address')
+      }, bchaddr.InvalidAddressError)
+      assert.throws(function () {
+        bchaddr.toLegacyAddress('some t1LuPdPkGH5QoNSewQrr8EzNbM27ktPdgQX')
       }, bchaddr.InvalidAddressError)
     })
     it('should translate legacy address format to itself correctly', function () {
@@ -461,6 +473,9 @@ describe('bchaddr', function () {
       assert.throws(function () {
         bchaddr.toBitpayAddress('some invalid address')
       }, bchaddr.InvalidAddressError)
+      assert.throws(function () {
+        bchaddr.toBitpayAddress('some t1LuPdPkGH5QoNSewQrr8EzNbM27ktPdgQX')
+      }, bchaddr.InvalidAddressError)
     })
     it('should translate legacy address format to bitpay format correctly', function () {
       assert.deepEqual(
@@ -489,6 +504,9 @@ describe('bchaddr', function () {
       }, bchaddr.InvalidAddressError)
       assert.throws(function () {
         bchaddr.toCashAddress('some invalid address')
+      }, bchaddr.InvalidAddressError)
+      assert.throws(function () {
+        bchaddr.toCashAddress('some int1LuPdPkGH5QoNSewQrr8EzNbM27ktPdgQX')
       }, bchaddr.InvalidAddressError)
     })
     it('should translate legacy address format to cashaddr format correctly', function () {
@@ -525,6 +543,9 @@ describe('bchaddr', function () {
       assert.throws(function () {
         bchaddr.isLegacyAddress('some invalid address')
       }, bchaddr.InvalidAddressError)
+      assert.throws(function () {
+        bchaddr.isLegacyAddress('some t1LuPdPkGH5QoNSewQrr8EzNbM27ktPdgQX')
+      }, bchaddr.InvalidAddressError)
     })
     it('should return true for a legacy address', function () {
       LEGACY_ADDRESSES.forEach(function (address) {
@@ -550,6 +571,9 @@ describe('bchaddr', function () {
       }, bchaddr.InvalidAddressError)
       assert.throws(function () {
         bchaddr.isBitpayAddress('some invalid address')
+      }, bchaddr.InvalidAddressError)
+      assert.throws(function () {
+        bchaddr.isBitpayAddress('some t1LuPdPkGH5QoNSewQrr8EzNbM27ktPdgQX')
       }, bchaddr.InvalidAddressError)
     })
     it('should return false for a legacy address', function () {
@@ -577,6 +601,9 @@ describe('bchaddr', function () {
       assert.throws(function () {
         bchaddr.isCashAddress('some invalid address')
       }, bchaddr.InvalidAddressError)
+      assert.throws(function () {
+        bchaddr.isCashAddress('some int1LuPdPkGH5QoNSewQrr8EzNbM27ktPdgQX')
+      }, bchaddr.InvalidAddressError)
     })
     it('should return false for a legacy address', function () {
       LEGACY_ADDRESSES.forEach(function (address) {
@@ -603,6 +630,9 @@ describe('bchaddr', function () {
       assert.throws(function () {
         bchaddr.isMainnetAddress('some invalid address')
       }, bchaddr.InvalidAddressError)
+      assert.throws(function () {
+        bchaddr.isMainnetAddress('somet1LuPdPkGH5QoNSewQrr8EzNbM27ktPdgQX')
+      }, bchaddr.InvalidAddressError)
     })
     it('should return true for a mainnet address', function () {
       MAINNET_ADDRESSES.forEach(function (address) {
@@ -623,6 +653,9 @@ describe('bchaddr', function () {
       }, bchaddr.InvalidAddressError)
       assert.throws(function () {
         bchaddr.isTestnetAddress('some invalid address')
+      }, bchaddr.InvalidAddressError)
+      assert.throws(function () {
+        bchaddr.isTestnetAddress('somet1LuPdPkGH5QoNSewQrr8EzNbM27ktPdgQX')
       }, bchaddr.InvalidAddressError)
     })
     it('should return false for a mainnet address', function () {
@@ -645,6 +678,9 @@ describe('bchaddr', function () {
       assert.throws(function () {
         bchaddr.isP2PKHAddress('some invalid address')
       }, bchaddr.InvalidAddressError)
+      assert.throws(function () {
+        bchaddr.isP2PKHAddress('some it1LuPdPkGH5QoNSewQrr8EzNbM27ktPdgQX')
+      }, bchaddr.InvalidAddressError)
     })
     it('should return true for a P2PKH address', function () {
       P2PKH_ADDRESSES.forEach(function (address) {
@@ -665,6 +701,9 @@ describe('bchaddr', function () {
       }, bchaddr.InvalidAddressError)
       assert.throws(function () {
         bchaddr.isP2SHAddress('some invalid address')
+      }, bchaddr.InvalidAddressError)
+      assert.throws(function () {
+        bchaddr.isP2SHAddress('some int1LuPdPkGH5QoNSewQrr8EzNbM27ktPdgQX')
       }, bchaddr.InvalidAddressError)
     })
     it('should return false for a P2PKH address', function () {

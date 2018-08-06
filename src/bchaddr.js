@@ -161,6 +161,13 @@ function decodeAddress (address) {
 }
 
 /**
+ * Length of a valid base58check encoding payload: 1 byte for
+ * the version byte plus 20 bytes for a RIPEMD-160 hash.
+ * @private
+ */
+var BASE_58_CHECK_PAYLOAD_LENGTH = 21
+
+/**
  * Attempts to decode the given address assuming it is a base58 address.
  * @private
  * @param {string} address - A valid Bitcoin Cash address in any format.
@@ -170,6 +177,9 @@ function decodeAddress (address) {
 function decodeBase58Address (address) {
   try {
     var payload = bs58check.decode(address)
+    if (payload.length !== BASE_58_CHECK_PAYLOAD_LENGTH) {
+      throw new InvalidAddressError()
+    }
     var versionByte = payload[0]
     var hash = Array.prototype.slice.call(payload, 1)
     switch (versionByte) {
