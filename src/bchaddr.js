@@ -37,6 +37,7 @@ Format.Cashaddr = 'cashaddr'
 var Network = {}
 Network.Mainnet = 'mainnet'
 Network.Testnet = 'testnet'
+Network.Regtest = 'regtest'
 
 /**
  * @static
@@ -133,6 +134,9 @@ VERSION_BYTE[Format.Legacy][Network.Mainnet][Type.P2SH] = 5
 VERSION_BYTE[Format.Legacy][Network.Testnet] = {}
 VERSION_BYTE[Format.Legacy][Network.Testnet][Type.P2PKH] = 111
 VERSION_BYTE[Format.Legacy][Network.Testnet][Type.P2SH] = 196
+VERSION_BYTE[Format.Legacy][Network.Regtest] = {}
+VERSION_BYTE[Format.Legacy][Network.Regtest][Type.P2PKH] = 0
+VERSION_BYTE[Format.Legacy][Network.Regtest][Type.P2SH] = 5
 VERSION_BYTE[Format.Bitpay] = {}
 VERSION_BYTE[Format.Bitpay][Network.Mainnet] = {}
 VERSION_BYTE[Format.Bitpay][Network.Mainnet][Type.P2PKH] = 28
@@ -140,6 +144,9 @@ VERSION_BYTE[Format.Bitpay][Network.Mainnet][Type.P2SH] = 40
 VERSION_BYTE[Format.Bitpay][Network.Testnet] = {}
 VERSION_BYTE[Format.Bitpay][Network.Testnet][Type.P2PKH] = 111
 VERSION_BYTE[Format.Bitpay][Network.Testnet][Type.P2SH] = 196
+VERSION_BYTE[Format.Bitpay][Network.Regtest] = {}
+VERSION_BYTE[Format.Bitpay][Network.Regtest][Type.P2PKH] = 28
+VERSION_BYTE[Format.Bitpay][Network.Regtest][Type.P2SH] = 40
 
 /**
  * Decodes the given address into its constituting hash, format, network and type.
@@ -245,7 +252,7 @@ function decodeCashAddress (address) {
     } catch (error) {
     }
   } else {
-    var prefixes = ['bitcoincash', 'bchtest', 'regtest', 'bchreg']
+    var prefixes = ['bitcoincash', 'bchtest', 'bchreg']
     for (var i = 0; i < prefixes.length; ++i) {
       try {
         var prefix = prefixes[i]
@@ -278,12 +285,17 @@ function decodeCashAddressWithPrefix (address) {
           type: type
         }
       case 'bchtest':
-      case 'regtest':
-      case 'bchreg':
         return {
           hash: hash,
           format: Format.Cashaddr,
           network: Network.Testnet,
+          type: type
+        }
+      case 'bchreg':
+        return {
+          hash: hash,
+          format: Format.Cashaddr,
+          network: Network.Regtest,
           type: type
         }
     }
@@ -327,7 +339,11 @@ function encodeAsBitpay (decoded) {
  * @returns {string}
  */
 function encodeAsCashaddr (decoded) {
-  var prefix = decoded.network === Network.Mainnet ? 'bitcoincash' : 'bchtest'
+  var networkToPrefix = {}
+  networkToPrefix[Network.Mainnet] = 'bitcoincash'
+  networkToPrefix[Network.Testnet] = 'bchtest'
+  networkToPrefix[Network.Regtest] = 'bchreg'
+  var prefix = networkToPrefix[decoded.network]
   var type = decoded.type === Type.P2PKH ? 'P2PKH' : 'P2SH'
   var hash = Uint8Array.from(decoded.hash)
   return cashaddr.encode(prefix, type, hash)
@@ -389,6 +405,17 @@ function isTestnetAddress (address) {
 }
 
 /**
+ * Returns a boolean indicating whether the address is a regtest address.
+ * @static
+ * @param {string} address - A valid Bitcoin Cash address in any format.
+ * @returns {boolean}
+ * @throws {InvalidAddressError}
+ */
+function isRegtestAddress (address) {
+  return detectAddressNetwork(address) === Network.Regtest
+}
+
+/**
  * Returns a boolean indicating whether the address is a p2pkh address.
  * @static
  * @param {string} address - A valid Bitcoin Cash address in any format.
@@ -439,6 +466,7 @@ module.exports = {
   isCashAddress: isCashAddress,
   isMainnetAddress: isMainnetAddress,
   isTestnetAddress: isTestnetAddress,
+  isRegtestAddress: isRegtestAddress,
   isP2PKHAddress: isP2PKHAddress,
   isP2SHAddress: isP2SHAddress,
   InvalidAddressError: InvalidAddressError

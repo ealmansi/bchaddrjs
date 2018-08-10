@@ -102,6 +102,22 @@ describe('bchaddr', function () {
     '2N5PDFvrCCraXA3pv8CDqr5NxakT8KJb3Gg'
   ]
 
+  var LEGACY_REGTEST_P2PKH_ADDRESSES = [
+    '12NtsJmhSTrabz3tyh6mtgZU837A8wbPcS',
+    '1L49DscwDyxtcNiKb5VPrhMJR8uEunLcNL',
+    '19tUjQ3LzGL8xBGfGQwNkc7QyV3ZCqLXzQ',
+    '1MqdaAuqKEdxbtCmGpWsGw4wYu2TLw3DHT',
+    '1G8EVHJ2nbFd4MF9hgHjN8mzX9vnkHh2Sv'
+  ]
+
+  var LEGACY_REGTEST_P2SH_ADDRESSES = [
+    '3PfiMeoVBdQByHq1ZKXYGHAcHEsAqAe2aq',
+    '326v9YiC7j1ewV6iex6VdqYTTSfXjUuyCe',
+    '3C1bi3xS8XxMJJrC3HqujjHz2wzM7hWXjc',
+    '3AswyHW5AJoh8x2fAwztgZK2UyEqUPUJNw',
+    '3DmGZ3jUstz6eMrNTYKBcZJkFCAJkJv2Uj'
+  ]
+
   var BITPAY_MAINNET_P2PKH_ADDRESSES = [
     'CScMwvXjdooDnGevHgfHjGWFi9cjk75Aaj',
     'CPYCf1WjVu8xkRdoBdPdjyuvNg42oA7g3o',
@@ -192,6 +208,22 @@ describe('bchaddr', function () {
     '2MuXzT5NSUwRzbAD1K6vvUDYqb3P9RUvPgK',
     '2NDt2aMj1BLjg6gRwuKn85jm2AhyAV8e2VF',
     '2N5PDFvrCCraXA3pv8CDqr5NxakT8KJb3Gg'
+  ]
+
+  var BITPAY_REGTEST_P2PKH_ADDRESSES = [
+    'CHqnSM7mKWq7W7xKfSRhUCBVkAKa3BvZJS',
+    'CbX2nuy172wRWWckGppKSCyL3G7epr955v',
+    'CRMNJSPQsKJfrKB5xAGJL7jSbcFyA98c4r',
+    'CdJX9DFuCHcVW27BxZqnrSgyB2EsJE9Ys8',
+    'CXb84Ke6feE9xV9aPRceweQ29H9CePRuZF'
+  ]
+
+  var BITPAY_REGTEST_P2SH_ADDRESSES = [
+    'HUVppTEa2wcrbTi3R1BhEfh9JttBgekGTe',
+    'H6w2cM9Gy3EKZeykWdkecE4zV6gYckH3qx',
+    'HGqiArPWyrB1vUjDtyW4i7pX4c1My8ZTBj',
+    'HFi4S5wA1d2Mm7uh2df3ewqZWdFrM4Csme',
+    'HJbP1rAZjDCmGXjQKDyLawqHGrBKZsRwSN'
   ]
 
   var CASHADDR_MAINNET_P2PKH_ADDRESSES = [
@@ -286,11 +318,45 @@ describe('bchaddr', function () {
     'bchtest:pzzjgw37vwls805c9fw6g9vqyupadst6wgg2232yf7'
   ]
 
+  var CASHADDR_REGTEST_P2PKH_ADDRESSES = [
+    'bchreg:qq83c2zuenlswy69qh8557s5x3klzmxd3cvnweu3ks',
+    'bchreg:qrgs9qzgcjr9kjujzvhagvqvr8d7pypkeyzks6hvp0',
+    'bchreg:qpsh6hn4kapn2l9s20dgf87k55gll20yrc3u36taw5',
+    'bchreg:qrjf2q4j0vx7xwqlnzcuy56vk9j9an0z458k0lrw3m',
+    'bchreg:qzj7sr407etdfaletclgn7ut3nl3hxxqusfeje0vmf'
+  ]
+
+  var CASHADDR_REGTEST_P2SH_ADDRESSES = [
+    'bchreg:prc38tlqr6t5fk2nfcacp3w3hcljz4nj3sw247lksj',
+    'bchreg:pqzg22ty3m437frzk4y0gvvyqj02jpfv7udqugqkne',
+    'bchreg:ppcnfunhxjunrjvq986g3xmexyc4l9qmfua8n9ylsh',
+    'bchreg:ppjv56rkje4fgyhk8h8gad7dacurdhucp57mtwvjtn',
+    'bchreg:pzzx7c5l0zlxyde36gwkhm7ua86qlvk90y2ecnynug'
+  ]
+
+  var CASHADDR_REGTESTASMAINNET_P2PKH_ADDRESSES = [
+    'bitcoincash:qq83c2zuenlswy69qh8557s5x3klzmxd3cjaula4j2',
+    'bitcoincash:qrgs9qzgcjr9kjujzvhagvqvr8d7pypkeyuczukg94',
+    'bitcoincash:qpsh6hn4kapn2l9s20dgf87k55gll20yrc0jru2e2w',
+    'bitcoincash:qrjf2q4j0vx7xwqlnzcuy56vk9j9an0z45ecaez24p',
+    'bitcoincash:qzj7sr407etdfaletclgn7ut3nl3hxxqushhqlwgln'
+  ]
+
+  var CASHADDR_REGTESTASMAINNET_P2SH_ADDRESSES = [
+    'bitcoincash:prc38tlqr6t5fk2nfcacp3w3hcljz4nj3ssy8c7j5g',
+    'bitcoincash:pqzg22ty3m437frzk4y0gvvyqj02jpfv7unwwwpjhr',
+    'bitcoincash:ppcnfunhxjunrjvq986g3xmexyc4l9qmfurfpr9m5d',
+    'bitcoincash:ppjv56rkje4fgyhk8h8gad7dacurdhucp5q4egdk0f',
+    'bitcoincash:pzzx7c5l0zlxyde36gwkhm7ua86qlvk90y5h249hcj'
+  ]
+
   var LEGACY_ADDRESSES = flatten([
     LEGACY_MAINNET_P2PKH_ADDRESSES,
     LEGACY_MAINNET_P2SH_ADDRESSES,
     LEGACY_TESTNET_P2PKH_ADDRESSES,
-    LEGACY_TESTNET_P2SH_ADDRESSES
+    LEGACY_TESTNET_P2SH_ADDRESSES,
+    LEGACY_REGTEST_P2PKH_ADDRESSES,
+    LEGACY_REGTEST_P2SH_ADDRESSES
   ])
 
   var BITPAY_MAINNET_ADDRESSES = flatten([
@@ -301,14 +367,27 @@ describe('bchaddr', function () {
   var BITPAY_ADDRESSES = flatten([
     BITPAY_MAINNET_ADDRESSES,
     BITPAY_TESTNET_P2PKH_ADDRESSES,
-    BITPAY_TESTNET_P2SH_ADDRESSES
+    BITPAY_TESTNET_P2SH_ADDRESSES,
+    BITPAY_REGTEST_P2PKH_ADDRESSES,
+    BITPAY_REGTEST_P2SH_ADDRESSES
   ])
 
   var CASHADDR_ADDRESSES = flatten([
     CASHADDR_MAINNET_P2PKH_ADDRESSES,
     CASHADDR_MAINNET_P2SH_ADDRESSES,
     CASHADDR_TESTNET_P2PKH_ADDRESSES,
-    CASHADDR_TESTNET_P2SH_ADDRESSES
+    CASHADDR_TESTNET_P2SH_ADDRESSES,
+    CASHADDR_REGTEST_P2PKH_ADDRESSES,
+    CASHADDR_REGTEST_P2SH_ADDRESSES
+  ])
+
+  var CASHADDR_ADDRESSES_REGTEST_AS_MAINNET = flatten([
+    CASHADDR_MAINNET_P2PKH_ADDRESSES,
+    CASHADDR_MAINNET_P2SH_ADDRESSES,
+    CASHADDR_TESTNET_P2PKH_ADDRESSES,
+    CASHADDR_TESTNET_P2SH_ADDRESSES,
+    CASHADDR_REGTESTASMAINNET_P2PKH_ADDRESSES,
+    CASHADDR_REGTESTASMAINNET_P2SH_ADDRESSES
   ])
 
   var CASHADDR_ADDRESSES_NO_PREFIX = CASHADDR_ADDRESSES.map(function (address) {
@@ -334,22 +413,37 @@ describe('bchaddr', function () {
     CASHADDR_TESTNET_P2SH_ADDRESSES
   ])
 
+  var REGTEST_ADDRESSES = flatten([
+    LEGACY_REGTEST_P2PKH_ADDRESSES,
+    LEGACY_REGTEST_P2SH_ADDRESSES,
+    BITPAY_REGTEST_P2PKH_ADDRESSES,
+    BITPAY_REGTEST_P2SH_ADDRESSES,
+    CASHADDR_REGTEST_P2PKH_ADDRESSES,
+    CASHADDR_REGTEST_P2SH_ADDRESSES
+  ])
+
   var P2PKH_ADDRESSES = flatten([
     LEGACY_MAINNET_P2PKH_ADDRESSES,
     LEGACY_TESTNET_P2PKH_ADDRESSES,
+    LEGACY_REGTEST_P2PKH_ADDRESSES,
     BITPAY_MAINNET_P2PKH_ADDRESSES,
     BITPAY_TESTNET_P2PKH_ADDRESSES,
+    BITPAY_REGTEST_P2PKH_ADDRESSES,
     CASHADDR_MAINNET_P2PKH_ADDRESSES,
-    CASHADDR_TESTNET_P2PKH_ADDRESSES
+    CASHADDR_TESTNET_P2PKH_ADDRESSES,
+    CASHADDR_REGTEST_P2PKH_ADDRESSES
   ])
 
   var P2SH_ADDRESSES = flatten([
     LEGACY_MAINNET_P2SH_ADDRESSES,
     LEGACY_TESTNET_P2SH_ADDRESSES,
+    LEGACY_REGTEST_P2SH_ADDRESSES,
     BITPAY_MAINNET_P2SH_ADDRESSES,
     BITPAY_TESTNET_P2SH_ADDRESSES,
+    BITPAY_REGTEST_P2SH_ADDRESSES,
     CASHADDR_MAINNET_P2SH_ADDRESSES,
-    CASHADDR_TESTNET_P2SH_ADDRESSES
+    CASHADDR_TESTNET_P2SH_ADDRESSES,
+    CASHADDR_REGTEST_P2SH_ADDRESSES
   ])
 
   function flatten (arrays) {
@@ -405,6 +499,15 @@ describe('bchaddr', function () {
     it('it should detect a testnet address\' network correctly', function () {
       TESTNET_ADDRESSES.forEach(function (address) {
         assert.strictEqual(bchaddr.detectAddressNetwork(address), bchaddr.Network.Testnet)
+      })
+    })
+    it('it should detect a regtest address\' network as regtest, unless it is unprefixed (in this case, mainnet would be the default)', function () {
+      REGTEST_ADDRESSES.forEach(function (address) {
+        if (address.indexOf(':') !== -1) {
+          assert.strictEqual(bchaddr.detectAddressNetwork(address), bchaddr.Network.Regtest)
+        } else {
+          assert.strictEqual(bchaddr.detectAddressNetwork(address), bchaddr.Network.Mainnet)
+        }
       })
     })
   })
@@ -509,16 +612,16 @@ describe('bchaddr', function () {
         bchaddr.toCashAddress('some int1LuPdPkGH5QoNSewQrr8EzNbM27ktPdgQX')
       }, bchaddr.InvalidAddressError)
     })
-    it('should translate legacy address format to cashaddr format correctly', function () {
+    it('should translate legacy address format to cashaddr format correctly (considering mainnet as default over regtest)', function () {
       assert.deepEqual(
         LEGACY_ADDRESSES.map(bchaddr.toCashAddress),
-        CASHADDR_ADDRESSES
+        CASHADDR_ADDRESSES_REGTEST_AS_MAINNET
       )
     })
-    it('should translate bitpay address format to cashaddr format correctly', function () {
+    it('should translate bitpay address format to cashaddr format correctly (considering mainnet as default over regtest)', function () {
       assert.deepEqual(
         BITPAY_ADDRESSES.map(bchaddr.toCashAddress),
-        CASHADDR_ADDRESSES
+        CASHADDR_ADDRESSES_REGTEST_AS_MAINNET
       )
     })
     it('should translate cashaddr address format to itself correctly', function () {
@@ -644,6 +747,15 @@ describe('bchaddr', function () {
         assert.isFalse(bchaddr.isMainnetAddress(address))
       })
     })
+    it('should return false for a regtest address, unless it is unprefixed (in this case, mainnet would be the default)', function () {
+      REGTEST_ADDRESSES.forEach(function (address) {
+        if (address.indexOf(':') !== -1) {
+          assert.isFalse(bchaddr.isMainnetAddress(address))
+        } else {
+          assert.isTrue(bchaddr.isMainnetAddress(address))
+        }
+      })
+    })
   })
 
   describe('#isTestnetAddress()', function () {
@@ -666,6 +778,44 @@ describe('bchaddr', function () {
     it('should return true for a testnet address', function () {
       TESTNET_ADDRESSES.forEach(function (address) {
         assert.isTrue(bchaddr.isTestnetAddress(address))
+      })
+    })
+    it('should return false for a regtest address', function () {
+      REGTEST_ADDRESSES.forEach(function (address) {
+        assert.isFalse(bchaddr.isTestnetAddress(address))
+      })
+    })
+  })
+
+  describe('#isRegtestAddress()', function () {
+    it('should fail when called with an invalid address', function () {
+      assert.throws(function () {
+        bchaddr.isRegtestAddress()
+      }, bchaddr.InvalidAddressError)
+      assert.throws(function () {
+        bchaddr.isRegtestAddress('some invalid address')
+      }, bchaddr.InvalidAddressError)
+      assert.throws(function () {
+        bchaddr.isRegtestAddress('somet1LuPdPkGH5QoNSewQrr8EzNbM27ktPdgQX')
+      }, bchaddr.InvalidAddressError)
+    })
+    it('should return false for a mainnet address', function () {
+      MAINNET_ADDRESSES.forEach(function (address) {
+        assert.isFalse(bchaddr.isRegtestAddress(address))
+      })
+    })
+    it('should return false for a testnet address', function () {
+      TESTNET_ADDRESSES.forEach(function (address) {
+        assert.isFalse(bchaddr.isRegtestAddress(address))
+      })
+    })
+    it('should return true for a regtest address, unless it is unprefixed (in this case, mainnet would be the default)', function () {
+      REGTEST_ADDRESSES.forEach(function (address) {
+        if (address.indexOf(':') !== -1) {
+          assert.isTrue(bchaddr.isRegtestAddress(address))
+        } else {
+          assert.isFalse(bchaddr.isRegtestAddress(address))
+        }
       })
     })
   })
@@ -777,6 +927,12 @@ describe('bchaddr', function () {
       assert.deepEqual(
         CASHADDR_ADDRESSES_NO_PREFIX.map(bchaddr.isTestnetAddress),
         CASHADDR_ADDRESSES.map(bchaddr.isTestnetAddress)
+      )
+    })
+    it('should return the same result for isRegtestAddress', function () {
+      assert.deepEqual(
+        CASHADDR_ADDRESSES_NO_PREFIX.map(bchaddr.isRegtestAddress),
+        CASHADDR_ADDRESSES.map(bchaddr.isRegtestAddress)
       )
     })
     it('should return the same result for isP2PKHAddress', function () {
