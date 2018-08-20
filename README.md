@@ -20,6 +20,11 @@ Test out a demo address translator powered by BchAddr.js [here](https://bitcoinc
 ```bsh
 $ npm install --save bchaddrjs
 ```
+### Using Yarn
+
+```bsh
+$ yarn add bchaddrjs
+```
 
 ### Using Bower
 
