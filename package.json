@@ -57,6 +57,6 @@
   },
   "dependencies": {
     "bs58check": "^2.1.2",
-    "cashaddrjs": "^0.2.8"
+    "cashaddrjs": "^0.2.9"
   }
 }
