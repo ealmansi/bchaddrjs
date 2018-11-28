@@ -1,6 +1,6 @@
 {
   "name": "bchaddrjs",
-  "version": "0.2.3",
+  "version": "0.3.0",
   "description": "Bitcoin Cash general purpose address translation.",
   "main": "src/bchaddr.js",
   "scripts": {
