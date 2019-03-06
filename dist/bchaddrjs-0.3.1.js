@@ -9278,7 +9278,7 @@ function encodeAsBitpay (decoded) {
 function encodeAsCashaddr (decoded) {
   var prefix = decoded.network === Network.Mainnet ? 'bitcoincash' : 'bchtest'
   var type = decoded.type === Type.P2PKH ? 'P2PKH' : 'P2SH'
-  var hash = Uint8Array.from(decoded.hash)
+  var hash = new Uint8Array(decoded.hash)
   return cashaddr.encode(prefix, type, hash)
 }
 
