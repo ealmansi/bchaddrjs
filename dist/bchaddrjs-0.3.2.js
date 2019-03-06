@@ -1003,25 +1003,37 @@ var bigInt = (function (undefined) {
     function millerRabinTest(n, a) {
         var nPrev = n.prev(),
             b = nPrev,
+            r = 0,
             d, t, i, x;
-        while (b.isEven()) b = b.divide(2);
-        for (i = 0; i < a.length; i++) {
+        while (b.isEven()) b = b.divide(2), r++;
+        next : for (i = 0; i < a.length; i++) {
             if (n.lesser(a[i])) continue;
             x = bigInt(a[i]).modPow(b, n);
             if (x.equals(Integer[1]) || x.equals(nPrev)) continue;
-            for (t = true, d = b; t && d.lesser(nPrev); d = d.multiply(2)) {
+            for (d = r - 1; d != 0; d--) {
                 x = x.square().mod(n);
-                if (x.equals(nPrev)) t = false;
+                if (x.isUnit()) return false;    
+                if (x.equals(nPrev)) continue next;
             }
-            if (t) return false;
+            return false;
         }
         return true;
     }
-
-    BigInteger.prototype.isPrime = function () {
+    
+// Set "strict" to true to force GRH-supported lower bound of 2*log(N)^2
+    BigInteger.prototype.isPrime = function (strict) {
         var isPrime = isBasicPrime(this);
         if (isPrime !== undefined) return isPrime;
-        return millerRabinTest(this.abs(), [2, 325, 9375, 28178, 450775, 9780504, 1795265022]);
+        var n = this.abs();
+        var bits = n.bitLength();
+        if(bits <= 64)
+            return millerRabinTest(n, [2, 325, 9375, 28178, 450775, 9780504, 1795265022]);
+        var logN = Math.log(2) * bits;
+        var t = Math.ceil((strict === true) ? (2 * Math.pow(logN, 2)) : logN);
+        for (var a = [], i = 0; i < t; i++) {
+            a.push(bigInt(i + 2));
+        }
+        return millerRabinTest(n, a);
     };
     SmallInteger.prototype.isPrime = BigInteger.prototype.isPrime;
 
@@ -3492,7 +3504,7 @@ function encode(prefix, type, hash) {
   validate(hash instanceof Uint8Array, 'Invalid hash: ' + hash + '.');
   var prefixData = concat(prefixToUint5Array(prefix), new Uint8Array(1));
   var versionByte = getTypeBits(type) + getHashSizeBits(hash);
-  var payloadData = toUint5Array(concat(Uint8Array.of(versionByte), hash));
+  var payloadData = toUint5Array(concat(new Uint8Array([versionByte]), hash));
   var checksumData = concat(concat(prefixData, payloadData), new Uint8Array(8));
   var payload = concat(payloadData, checksumToUint5Array(polymod(checksumData)));
   return prefix + ':' + base32.encode(payload);
@@ -3513,9 +3525,9 @@ function decode(address) {
   var prefix = pieces[0];
   var payload = base32.decode(pieces[1]);
   validate(validChecksum(prefix, payload), 'Invalid checksum: ' + address + '.');
-  var payloadData = fromUint5Array(payload.slice(0, -8));
+  var payloadData = fromUint5Array(payload.subarray(0, -8));
   var versionByte = payloadData[0];
-  var hash = payloadData.slice(1);
+  var hash = payloadData.subarray(1);
   validate(getHashSize(versionByte) === hash.length * 8, 'Invalid hash size: ' + address + '.');
   var type = getType(versionByte);
   return {
