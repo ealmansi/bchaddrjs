@@ -15,28 +15,27 @@ Test out a demo address translator powered by BchAddr.js [here](https://bitcoinc
 
 ## Installation
 
-### Using NPM
+### Using NPM or Yarn
 
 ```bsh
-$ npm install --save bchaddrjs
-```
-
-### Using Bower
-
-```bsh
-$ bower install --save bchaddrjs
+$ npm install bchaddrjs
+$ yarn add bchaddrjs
 ```
 
 ### Manually
 
-You may also download the distribution file manually and place it within your third-party scripts directory: [dist/bchaddrjs-{{ version }}.min.js](https://cdn.rawgit.com/bitcoincashjs/bchaddrjs/master/dist/bchaddrjs-{{ version }}.min.js).
+You may also download the distribution file manually and place it within your third-party scripts directory: [dist/bchaddrjs-{{ version }}.min.js](https://unpkg.com/bchaddrjs@{{ version }}/dist/bchaddrjs-{{ version }}.min.js).
 
 ## Usage
 
 ### In Node.js
 
 ```javascript
+// Common-JS
 var bchaddr = require('bchaddrjs');
+
+// ES6 modules
+import bchaddr from 'bchaddrjs';
 ```
 
 ### Browser
@@ -49,7 +48,7 @@ You may include a script tag in your HTML and the `bchaddr` module will be defin
 <html>
   <head>
     ...
-    <script src="https://cdn.rawgit.com/bitcoincashjs/bchaddrjs/master/dist/bchaddrjs-{{ version }}.min.js"></script>
+    <script src="https://unpkg.com/bchaddrjs@{{ version }}/dist/bchaddrjs-{{ version }}.min.js"></script>
   </head>
   ...
 </html>
@@ -63,6 +62,22 @@ var Format = bchaddr.Format; // Legacy, Bitpay or Cashaddr.
 var Network = bchaddr.Network; // Mainnet or Testnet.
 var Type = bchaddr.Type; // P2PKH or P2SH.
 ```
+
+### Test if a string is a valid Bitcoin Cash address of any type, in any format.
+```javascript
+var isValidAddress = bchaddr.isValidAddress;
+
+isValidAddress(null) // false
+isValidAddress('') // false
+isValidAddress('some invalid address') // false
+isValidAddress('bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq') // false
+isValidAddress('1B9UNtBfkkpgt8kVbwLN9ktE62QKnMbDzR') // true
+isValidAddress('CScMwvXjdooDnGevHgfHjGWFi9cjk75Aaj') // true
+isValidAddress('qph5kuz78czq00e3t85ugpgd7xmer5kr7c5f6jdpwk') // true
+isValidAddress('bitcoincash:qph5kuz78czq00e3t85ugpgd7xmer5kr7c5f6jdpwk') // true
+```
+
+**Note: You can use this function to check if any input is a valid Bitcoin Cash address.<br>Other functions in this library will throw an `InvalidAddressError` on invalid inputs.**
 
 ### Test for address format.
 ```javascript

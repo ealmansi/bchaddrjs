@@ -1,7 +1,7 @@
 /***
  * @license
  * https://github.com/bitcoincashjs/bchaddr
- * Copyright (c) 2018 Emilio Almansi
+ * Copyright (c) 2018-2019 Emilio Almansi
  * Distributed under the MIT software license, see the accompanying
  * file LICENSE or http://www.opensource.org/licenses/mit-license.php.
  */
@@ -45,6 +45,21 @@ Network.Testnet = 'testnet'
 var Type = {}
 Type.P2PKH = 'p2pkh'
 Type.P2SH = 'p2sh'
+
+/**
+ * Returns a boolean indicating whether the given input is a valid Bitcoin Cash address.
+ * @static
+ * @param {*} input - Any input to check for validity.
+ * @returns {boolean}
+ */
+function isValidAddress (input) {
+  try {
+    decodeAddress(input)
+    return true
+  } catch (error) {
+    return false
+  }
+}
 
 /**
  * Detects what is the given address' format.
@@ -427,6 +442,7 @@ module.exports = {
   Format: Format,
   Network: Network,
   Type: Type,
+  isValidAddress: isValidAddress,
   detectAddressFormat: detectAddressFormat,
   detectAddressNetwork: detectAddressNetwork,
   detectAddressType: detectAddressType,

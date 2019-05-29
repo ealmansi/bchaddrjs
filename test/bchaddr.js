@@ -1,7 +1,7 @@
 /***
  * @license
  * https://github.com/bitcoincashjs/bchaddr
- * Copyright (c) 2018 Emilio Almansi
+ * Copyright (c) 2018-2019 Emilio Almansi
  * Distributed under the MIT software license, see the accompanying
  * file LICENSE or http://www.opensource.org/licenses/mit-license.php.
  */
@@ -352,9 +352,33 @@ describe('bchaddr', function () {
     CASHADDR_TESTNET_P2SH_ADDRESSES
   ])
 
+  var BITCOIN_CASH_ADDRESSES = flatten([
+    MAINNET_ADDRESSES,
+    TESTNET_ADDRESSES
+  ])
+
   function flatten (arrays) {
     return [].concat.apply([], arrays)
   }
+
+  describe('#isValidAddress()', function () {
+    it('it should return false for invalid inputs', function () {
+      var INVALID_INPUTS = [
+        undefined, null,
+        {}, [],
+        1, '',
+        'some invalid address', 'st1LuPdPkGH5QoNSewQrr8EzNbM27ktPdgQX'
+      ]
+      INVALID_INPUTS.forEach(function (address) {
+        assert.isFalse(bchaddr.isValidAddress(address))
+      })
+    })
+    it('it should return true for any valid Bitcoin Cash address', function () {
+      BITCOIN_CASH_ADDRESSES.forEach(function (address) {
+        assert.isTrue(bchaddr.isValidAddress(address))
+      })
+    })
+  })
 
   describe('#detectAddressFormat()', function () {
     it('should fail when called with an invalid address', function () {

@@ -1,7 +1,7 @@
 /***
  * @license
  * https://github.com/bitcoincashjs/bchaddr
- * Copyright (c) 2018 Emilio Almansi
+ * Copyright (c) 2018-2019 Emilio Almansi
  * Distributed under the MIT software license, see the accompanying
  * file LICENSE or http://www.opensource.org/licenses/mit-license.php.
  */
@@ -14,6 +14,7 @@ describe('Readme examples', function () {
     var Format = bchaddr.Format
     var Network = bchaddr.Network
     var Type = bchaddr.Type
+    var isValidAddress = bchaddr.isValidAddress
     var isLegacyAddress = bchaddr.isLegacyAddress
     var isBitpayAddress = bchaddr.isBitpayAddress
     var isCashAddress = bchaddr.isCashAddress
@@ -27,6 +28,38 @@ describe('Readme examples', function () {
     var toLegacyAddress = bchaddr.toLegacyAddress
     var toBitpayAddress = bchaddr.toBitpayAddress
     var toCashAddress = bchaddr.toCashAddress
+    assert.strictEqual(
+      isValidAddress(null),
+      false
+    )
+    assert.strictEqual(
+      isValidAddress(''),
+      false
+    )
+    assert.strictEqual(
+      isValidAddress('some invalid address'),
+      false
+    )
+    assert.strictEqual(
+      isValidAddress('bc1qar0srrr7xfkvy5l643lydnw9re59gtzzwf5mdq'),
+      false
+    )
+    assert.strictEqual(
+      isValidAddress('1B9UNtBfkkpgt8kVbwLN9ktE62QKnMbDzR'),
+      true
+    )
+    assert.strictEqual(
+      isValidAddress('CScMwvXjdooDnGevHgfHjGWFi9cjk75Aaj'),
+      true
+    )
+    assert.strictEqual(
+      isValidAddress('qph5kuz78czq00e3t85ugpgd7xmer5kr7c5f6jdpwk'),
+      true
+    )
+    assert.strictEqual(
+      isValidAddress('bitcoincash:qph5kuz78czq00e3t85ugpgd7xmer5kr7c5f6jdpwk'),
+      true
+    )
     assert.strictEqual(
       isLegacyAddress('1B9UNtBfkkpgt8kVbwLN9ktE62QKnMbDzR'),
       true
