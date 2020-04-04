@@ -3519,8 +3519,8 @@ var hexSliceLookupTable = (function () {
 },{"base64-js":2,"buffer":9,"ieee754":21}],10:[function(require,module,exports){
 /**
  * @license
- * https://github.com/bitcoincashjs/cashaddr
- * Copyright (c) 2017-2018 Emilio Almansi
+ * https://github.com/ealmansi/cashaddrjs
+ * Copyright (c) 2017-2020 Emilio Almansi
  * Distributed under the MIT software license, see the accompanying
  * file LICENSE or http://www.opensource.org/licenses/mit-license.php.
  */
@@ -3598,8 +3598,8 @@ module.exports = {
 },{"./validation":13}],11:[function(require,module,exports){
 /**
  * @license
- * https://github.com/bitcoincashjs/cashaddr
- * Copyright (c) 2017-2018 Emilio Almansi
+ * https://github.com/ealmansi/cashaddrjs
+ * Copyright (c) 2017-2020 Emilio Almansi
  * Distributed under the MIT software license, see the accompanying
  * file LICENSE or http://www.opensource.org/licenses/mit-license.php.
  */
@@ -4004,8 +4004,8 @@ module.exports = function(data, from, to, strictMode) {
 },{"./validation":13}],13:[function(require,module,exports){
 /**
  * @license
- * https://github.com/bitcoincashjs/cashaddr
- * Copyright (c) 2017-2018 Emilio Almansi
+ * https://github.com/ealmansi/cashaddrjs
+ * Copyright (c) 2017-2020 Emilio Almansi
  * Distributed under the MIT software license, see the accompanying
  * file LICENSE or http://www.opensource.org/licenses/mit-license.php.
  */
@@ -9536,8 +9536,8 @@ function config (name) {
 (function (Buffer){
 /***
  * @license
- * https://github.com/bitcoincashjs/bchaddr
- * Copyright (c) 2018-2019 Emilio Almansi
+ * https://github.com/ealmansi/bchaddrjs
+ * Copyright (c) 2018-2020 Emilio Almansi
  * Distributed under the MIT software license, see the accompanying
  * file LICENSE or http://www.opensource.org/licenses/mit-license.php.
  */
