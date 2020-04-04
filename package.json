@@ -21,7 +21,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+ssh://git@github.com/bitcoincashjs/bchaddrjs.git"
+    "url": "git+ssh://git@github.com/ealmansi/bchaddrjs.git"
   },
   "keywords": [
     "bitcoin-cash",
@@ -38,9 +38,9 @@
   "author": "Emilio Almansi <hi@ealmansi.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/bitcoincashjs/bchaddrjs/issues"
+    "url": "https://github.com/ealmansi/bchaddrjs/issues"
   },
-  "homepage": "https://github.com/bitcoincashjs/bchaddrjs#readme",
+  "homepage": "https://github.com/ealmansi/bchaddrjs#readme",
   "devDependencies": {
     "browserify": "^16.5.0",
     "cached-path-relative": "1.0.2",

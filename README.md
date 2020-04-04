@@ -1,6 +1,6 @@
 # BchAddr.js: Bitcoin Cash general purpose address translation for Node.js and web browsers.
 
-[![Build Status](https://travis-ci.org/bitcoincashjs/bchaddrjs.svg?branch=master)](https://travis-ci.org/bitcoincashjs/bchaddrjs) [![Coverage Status](https://coveralls.io/repos/github/bitcoincashjs/bchaddrjs/badge.svg?branch=master)](https://coveralls.io/github/bitcoincashjs/bchaddrjs?branch=master)
+[![Build Status](https://travis-ci.org/ealmansi/bchaddrjs.svg?branch=master)](https://travis-ci.org/ealmansi/bchaddrjs) [![Coverage Status](https://coveralls.io/repos/github/ealmansi/bchaddrjs/badge.svg?branch=master)](https://coveralls.io/github/ealmansi/bchaddrjs?branch=master)
 [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 [![NPM](https://nodei.co/npm/bchaddrjs.png?downloads=true)](https://nodei.co/npm/bchaddrjs/)
@@ -160,4 +160,4 @@ $ npm run docs
 
 ### Online
 
-Browse automatically generated jsdocs [online](https://cdn.rawgit.com/bitcoincashjs/bchaddrjs/master/jsdoc/index.html).
+Browse automatically generated jsdocs [online](https://cdn.rawgit.com/ealmansi/bchaddrjs/master/jsdoc/index.html).

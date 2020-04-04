@@ -18,7 +18,7 @@
     "bitpay",
     "cash-address"
   ],
-  "homepage": "https://github.com/bitcoincashjs/bchaddrjs",
+  "homepage": "https://github.com/ealmansi/bchaddrjs",
   "ignore": [
     "**/.*",
     "node_modules",
