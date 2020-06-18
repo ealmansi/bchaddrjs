@@ -46,10 +46,10 @@
     "cached-path-relative": "1.0.2",
     "chai": "^4.2.0",
     "coveralls": "^3.0.9",
-    "http-server": "^0.12.1",
+    "http-server": "^0.12.3",
     "jsdoc": "^3.6.3",
     "lodash": "^4.17.15",
-    "mocha": "^6.2.2",
+    "mocha": "^8.0.1",
     "mustache": "^2.3.2",
     "nyc": "^15.0.0",
     "shelljs": "^0.8.3",
@@ -58,6 +58,6 @@
   },
   "dependencies": {
     "bs58check": "^2.1.2",
-    "cashaddrjs": "^0.3.11"
+    "cashaddrjs": "^0.3.12"
   }
 }
