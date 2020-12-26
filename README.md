@@ -24,7 +24,7 @@ $ yarn add bchaddrjs
 
 ### Manually
 
-You may also download the distribution file manually and place it within your third-party scripts directory: [dist/bchaddrjs-0.5.1.min.js](https://unpkg.com/bchaddrjs@0.5.1/dist/bchaddrjs-0.5.1.min.js).
+You may also download the distribution file manually and place it within your third-party scripts directory: [dist/bchaddrjs-0.5.2.min.js](https://unpkg.com/bchaddrjs@0.5.2/dist/bchaddrjs-0.5.2.min.js).
 
 ## Usage
 
@@ -48,7 +48,7 @@ You may include a script tag in your HTML and the `bchaddr` module will be defin
 <html>
   <head>
     ...
-    <script src="https://unpkg.com/bchaddrjs@0.5.1/dist/bchaddrjs-0.5.1.min.js"></script>
+    <script src="https://unpkg.com/bchaddrjs@0.5.2/dist/bchaddrjs-0.5.2.min.js"></script>
   </head>
   ...
 </html>
@@ -160,4 +160,4 @@ $ npm run docs
 
 ### Online
 
-Browse automatically generated jsdocs [online](https://cdn.rawgit.com/ealmansi/bchaddrjs/master/jsdoc/index.html).
+Browse automatically generated jsdocs [online](https://emilio.almansi.me/bchaddrjs/module-bchaddr.html).
