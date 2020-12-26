@@ -1,20 +1,16 @@
 {
   "name": "bchaddrjs",
-  "version": "0.4.9",
+  "version": "0.5.0",
   "description": "Bitcoin Cash general purpose address translation.",
   "main": "src/bchaddr.js",
   "scripts": {
-    "build": "node scripts/build.js",
-    "lint": "standard --global describe --global it src/* test/* scripts/*",
-    "pretest": "npm run lint",
+    "clean": "shx rm -rf dist/ docs/",
+    "build": "webpack",
+    "lint": "standard --global describe --global it src/* test/*",
+    "pretest": "yarn lint",
     "test": "nyc --reporter=html --reporter=text mocha",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "docs": "jsdoc src/bchaddr.js --destination jsdoc && http-server jsdoc",
-    "preversion": "npm test",
-    "version": "node scripts/version.js",
-    "postversion": "node scripts/postversion.js",
-    "bump": "npm version patch -m 'Bump version to %s.'",
-    "bump:minor": "npm version minor -m 'Bump version to %s.'"
+    "docs": "jsdoc src/bchaddr.js --destination docs"
   },
   "engines": {
     "node": ">=8.0.0"
@@ -42,22 +38,23 @@
   },
   "homepage": "https://github.com/ealmansi/bchaddrjs#readme",
   "devDependencies": {
-    "browserify": "^16.5.0",
-    "cached-path-relative": "1.0.2",
-    "chai": "^4.2.0",
-    "coveralls": "^3.0.9",
-    "http-server": "^0.12.3",
-    "jsdoc": "^3.6.3",
-    "lodash": "^4.17.15",
-    "mocha": "^8.0.1",
-    "mustache": "^2.3.2",
-    "nyc": "^15.0.0",
-    "shelljs": "^0.8.3",
+    "@babel/cli": "7.12.10",
+    "@babel/core": "7.12.10",
+    "@babel/preset-env": "7.12.11",
+    "babel-loader": "8.2.2",
+    "chai": "4.2.0",
+    "coveralls": "3.0.9",
+    "jsdoc": "3.6.3",
+    "mocha": "8.2.1",
+    "mustache": "2.3.2",
+    "nyc": "15.0.0",
+    "shelljs": "0.8.3",
     "standard": "14.3.2",
-    "uglify-js": "^3.8.0"
+    "webpack": "5.11.0",
+    "webpack-cli": "4.3.0"
   },
   "dependencies": {
-    "bs58check": "^2.1.2",
-    "cashaddrjs": "^0.3.12"
+    "bs58check": "2.1.2",
+    "cashaddrjs": "0.4.4"
   }
 }
