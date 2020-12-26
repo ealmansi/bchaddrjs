@@ -160,4 +160,4 @@ $ npm run docs
 
 ### Online
 
-Browse automatically generated jsdocs [online](https://cdn.rawgit.com/ealmansi/bchaddrjs/master/jsdoc/index.html).
+Browse automatically generated jsdocs [online](https://emilio.almansi.me/bchaddrjs/module-bchaddr.html).
