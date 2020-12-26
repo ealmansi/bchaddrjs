@@ -8,6 +8,7 @@
 
 var bs58check = require('bs58check')
 var cashaddr = require('cashaddrjs')
+var Buffer = require('buffer/').Buffer
 
 /**
  * General purpose Bitcoin Cash address detection and translation.<br />
