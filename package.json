@@ -10,7 +10,8 @@
     "pretest": "yarn lint",
     "test": "nyc --reporter=html --reporter=text mocha",
     "coveralls": "nyc report --reporter=text-lcov | coveralls",
-    "docs": "jsdoc src/bchaddr.js --destination docs"
+    "docs": "jsdoc src/bchaddr.js --destination docs",
+    "readme": "mustache package.json README.tpl.md > README.md"
   },
   "engines": {
     "node": ">=8.0.0"
