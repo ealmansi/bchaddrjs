@@ -56,7 +56,7 @@
     "webpack-cli": "4.3.0"
   },
   "dependencies": {
-    "bs58check": "2.1.2",
+    "bs58check": "3.0.1",
     "buffer": "^6.0.3",
     "cashaddrjs": "0.4.4",
     "stream-browserify": "^3.0.0"
